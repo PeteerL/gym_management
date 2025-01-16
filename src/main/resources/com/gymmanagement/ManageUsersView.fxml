@@ -1,0 +1,24 @@
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.gymmanagement.controllers.ManageUsersController"
+      spacing="10" alignment="CENTER">
+    <Label text="Manage Users" style="-fx-font-size: 24; -fx-font-weight: bold;" />
+    <TableView fx:id="usersTable" prefHeight="300" prefWidth="500">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID" prefWidth="50" />
+            <TableColumn fx:id="nameColumn" text="Name" prefWidth="150" />
+            <TableColumn fx:id="emailColumn" text="Email" prefWidth="200" />
+            <TableColumn fx:id="roleColumn" text="Role" prefWidth="100" />
+        </columns>
+    </TableView>
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Add User" onAction="#handleAddUser" />
+        <Button text="Edit User" onAction="#handleEditUser" />
+        <Button text="Delete User" onAction="#handleDeleteUser" />
+    </HBox>
+</VBox>

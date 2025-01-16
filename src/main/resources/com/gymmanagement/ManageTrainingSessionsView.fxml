@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.gymmanagement.controllers.ManageTrainingSessionController"
+      spacing="10" alignment="CENTER">
+    <Label text="Manage Training Sessions" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+    <TableView fx:id="sessionTable" prefHeight="300" prefWidth="600">
+        <columns>
+            <TableColumn fx:id="sessionIdColumn" text="ID" prefWidth="50" />
+            <TableColumn fx:id="sessionTypeColumn" text="Session Type" prefWidth="150" />
+            <TableColumn fx:id="sessionDateColumn" text="Session Date" prefWidth="150" />
+            <TableColumn fx:id="capacityColumn" text="Capacity" prefWidth="100" />
+            <TableColumn fx:id="availableSlotsColumn" text="Available Slots" prefWidth="150" />
+        </columns>
+    </TableView>
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Add Session" onAction="#handleAddSession" />
+        <Button text="Edit Session" onAction="#handleEditSession" />
+        <Button text="Delete Session" onAction="#handleDeleteSession" />
+    </HBox>
+</VBox>

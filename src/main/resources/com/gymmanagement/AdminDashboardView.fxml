@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="root" alignment="CENTER" spacing="10" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.gymmanagement.controllers.AdminDashboardController">
+    <Label fx:id="welcomeLabel" style="-fx-font-size: 18; -fx-font-weight: bold;" alignment="CENTER" />
+    <Button text="Manage Users" onAction="#handleManageUsers" />
+    <Button text="Manage Subscriptions" onAction="#handleManageSubscriptions" />
+    <Button text="Manage Training Sessions" onAction="#handleManageTrainingSessions" />
+    <Button text="Manage Activity Logs" onAction="#handleManageActivityLog" />
+    <Button text="Logout" onAction="#handleLogout" />
+</VBox>

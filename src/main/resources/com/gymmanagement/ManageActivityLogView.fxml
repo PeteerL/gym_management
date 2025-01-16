@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.gymmanagement.controllers.ManageActivityLogController" spacing="10" alignment="CENTER">
+    <Label text="Manage Activity Logs" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+    <TableView fx:id="activityLogTable" prefWidth="600" prefHeight="400">
+        <columns>
+            <TableColumn fx:id="logIdColumn" text="Log ID" prefWidth="100" />
+            <TableColumn fx:id="clientIdColumn" text="Client ID" prefWidth="100" />
+            <TableColumn fx:id="activityTypeColumn" text="Activity Type" prefWidth="150" />
+            <TableColumn fx:id="durationColumn" text="Duration (minutes)" prefWidth="150" />
+            <TableColumn fx:id="logDateColumn" text="Date" prefWidth="150" />
+        </columns>
+    </TableView>
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Add Activity Log" onAction="#handleAddActivityLog" />
+        <Button text="Edit Activity Log" onAction="#handleEditActivityLog" />
+        <Button text="Delete Activity Log" onAction="#handleDeleteActivityLog" />
+    </HBox>
+</VBox>
