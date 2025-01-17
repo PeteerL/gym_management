@@ -15,7 +15,7 @@ import java.io.IOException;
 public class ClientDashboardController {
 
     @FXML
-    private VBox root; // Nodul principal pentru scena curentă
+    private VBox root; // Nodul principal pentru scena curenta
 
     @FXML
     private Label welcomeLabel;

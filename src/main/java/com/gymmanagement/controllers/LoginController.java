@@ -44,16 +44,16 @@ public class LoginController {
             return;
         }
 
-        // Verificare în baza de date pentru clienți și antrenori
+        // Verificare in baza de date pentru clienti si antrenori
         User user = userDAO.getUserByEmail(email);
         if (user != null && user.getPassword().equals(password)) {
             System.out.println("Autentificare reușită pentru: " + user.getName());
             errorLabel.setText("");
 
-            // Setează utilizatorul curent în sesiune
+            // Seteaza utilizatorul curent în sesiune
             SessionManager.setCurrentUser(user);
 
-            // Redirecționare pe baza rolului
+            // Redirectionare pe baza rolului
             switch (user.getRole().toLowerCase()) {
                 case "trainer":
                     redirectToTrainerDashboard(user);

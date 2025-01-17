@@ -13,13 +13,13 @@ public class EnrollmentDAO {
         String updateSlotsQuery = "UPDATE training_sessions SET available_slots = available_slots - 1 WHERE session_id = ? AND available_slots > 0";
 
         try (Connection connection = DatabaseConfig.getConnection()) {
-            // Verificăm dacă clientul este deja înscris
+            // Verificam daca clientul este deja inscris
             if (isClientEnrolledInSession(clientId, sessionId)) {
                 System.out.println("Client already enrolled in this session.");
                 return false;
             }
 
-            // Înscrierea clientului și actualizarea locurilor disponibile
+            // Inscrierea clientului si actualizarea locurilor disponibile
             connection.setAutoCommit(false);
 
             try (PreparedStatement enrollStmt = connection.prepareStatement(enrollQuery);
@@ -57,7 +57,7 @@ public class EnrollmentDAO {
         String updateSlotsQuery = "UPDATE training_sessions SET available_slots = GREATEST(available_slots + 1, capacity) WHERE session_id = ?";
 
         try (Connection connection = DatabaseConfig.getConnection()) {
-            // Verificăm dacă sesiunea este în viitor și dacă clientul este înscris
+            // Verificam daca sesiunea este în viitor si daca clientul este inscris
             if (!isClientEnrolledInSession(clientId, sessionId)) {
                 System.out.println("Client is not enrolled in this session.");
                 return false;

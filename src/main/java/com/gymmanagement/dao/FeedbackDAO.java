@@ -9,7 +9,7 @@ import java.util.List;
 
 public class FeedbackDAO {
 
-    // Adaugă un nou feedback în baza de date
+    // Adauga un nou feedback in baza de date
     public boolean addFeedback(Feedback feedback) {
         String query = "INSERT INTO feedback (client_id, trainer_id, feedback_text, rating, timestamp) VALUES (?, ?, ?, ?, ?)";
         try (Connection connection = DatabaseConfig.getConnection();

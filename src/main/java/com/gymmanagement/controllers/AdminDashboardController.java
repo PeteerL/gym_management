@@ -60,7 +60,7 @@ public class AdminDashboardController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/gymmanagement/ManageTrainingSessionsView.fxml"));
             Scene scene = new Scene(loader.load());
 
-            // Creează o fereastră noua pentru gestionarea sesiunilor
+            // Creeaza o fereastra noua pentru gestionarea sesiunilor
             Stage stage = new Stage();
             stage.setScene(scene);
             stage.setTitle("Manage Training Sessions");
@@ -99,7 +99,7 @@ public class AdminDashboardController {
             stage.setScene(scene);
             stage.show();
 
-            // Opțional: Curata sesiunea utilizatorului curent (dacă ai un sistem de sesiuni)
+            // Optional: Curata sesiunea utilizatorului curent (daca ai un sistem de sesiuni)
             SessionManager.setCurrentUser(null);
 
             System.out.println("Deconectare reușită. Redirecționat la pagina de login.");
