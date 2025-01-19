@@ -16,7 +16,7 @@ public class ActivityLog {
     private final SimpleIntegerProperty durationProperty = new SimpleIntegerProperty();
     private final SimpleObjectProperty<LocalDate> logDateProperty = new SimpleObjectProperty<>();
 
-    // Constructors
+    // Constructori
     public ActivityLog(int logId, int clientId, String activityType, int durationMinutes, LocalDate logDate) {
         this.logId = logId;
         this.clientId = clientId;
@@ -43,7 +43,7 @@ public class ActivityLog {
         this.logDateProperty.set(logDate);
     }
 
-    // Getters and Setters
+    // Getteri and Setteri
     public int getLogId() {
         return logId;
     }
@@ -89,7 +89,7 @@ public class ActivityLog {
         this.logDateProperty.set(logDate);
     }
 
-    // JavaFX Properties
+    // Proprietati JavaFX
     public IntegerProperty logIdProperty() {
         return logIdProperty;
     }

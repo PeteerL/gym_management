@@ -55,7 +55,7 @@ public class ManageUsersController {
         dialog.setTitle("Add User");
         dialog.setHeaderText("Enter the details of the new user");
 
-        // Configurare câmpuri pentru introducerea datelor
+        // Configurare campuri pentru introducerea datelor
         Label nameLabel = new Label("Name:");
         TextField nameField = new TextField();
         Label emailLabel = new Label("Email:");
@@ -81,7 +81,7 @@ public class ManageUsersController {
 
         dialog.getDialogPane().setContent(grid);
 
-        // Butoane OK și Cancel
+        // OK and Cancel buttons
         ButtonType addButtonType = new ButtonType("Add", ButtonBar.ButtonData.OK_DONE);
         dialog.getDialogPane().getButtonTypes().addAll(addButtonType, ButtonType.CANCEL);
 
@@ -94,7 +94,7 @@ public class ManageUsersController {
                 String password = passwordField.getText().trim();
                 String role = roleChoiceBox.getValue();
 
-                // Validări
+                // Validari
                 if (name.isEmpty() || email.isEmpty() || password.isEmpty() || role == null) {
                     showAlert("Validation Error", "All fields are required.");
                     return null;
@@ -109,7 +109,7 @@ public class ManageUsersController {
                 }
 
 
-                // Dacă trece validarea, returnăm utilizatorul
+                // Daca trece validarea, returnam utilizatorul
                 return new User(0, name, email, password, role);
             }
             return null;
@@ -119,19 +119,19 @@ public class ManageUsersController {
             boolean success = userDAO.addUser(user); // Apelăm metoda addUser
             if (success) {
                 showAlert("Success", "User added successfully.");
-                loadUsers(); // Reîncărcăm lista de utilizatori în tabel
+                loadUsers(); // Reincarcam lista de utilizatori în tabel
             } else {
                 showAlert("Error", "Failed to add user. Please try again.");
             }
         });
     }
 
-    // Metodă pentru validarea numelui în Add User
+    // Metoda pentru validarea numelui in Add User
     private boolean isValidNameForAdd(String name) {
         return name.matches("^[A-Z][a-zA-Z ]*$");
     }
 
-    // Metodă pentru validarea emailului în Add User
+    // Metoda pentru validarea emailului în Add User
     private boolean isValidEmailForAdd(String email) {
         String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
         return email.matches(emailRegex);
@@ -192,7 +192,7 @@ public class ManageUsersController {
                 String password = passwordField.getText().trim();
                 String role = roleChoiceBox.getValue();
 
-                // Validări
+                // Validari
                 if (name.isEmpty() || email.isEmpty() || role == null) {
                     showAlert("Validation Error", "All fields except password are required.");
                     return null;
@@ -207,12 +207,12 @@ public class ManageUsersController {
                 }
 
 
-                // Actualizăm obiectul utilizator
+                // Actualizam obiectul utilizator
                 selectedUser.setName(name);
                 selectedUser.setEmail(email);
                 selectedUser.setRole(role);
                 if (!password.isEmpty()) {
-                    selectedUser.setPassword(password); // Schimbăm parola doar dacă este completată
+                    selectedUser.setPassword(password); // Schimbam parola doar daca este completata
                 }
                 return selectedUser;
             }
@@ -223,19 +223,19 @@ public class ManageUsersController {
             boolean success = userDAO.updateUser(user); // Apelăm metoda updateUser
             if (success) {
                 showAlert("Success", "User updated successfully.");
-                loadUsers(); // Reîncărcăm lista de utilizatori în tabel
+                loadUsers(); // Reincarcam lista de utilizatori în tabel
             } else {
                 showAlert("Error", "Failed to update user. Please try again.");
             }
         });
     }
 
-    // Metodă pentru validarea numelui în Edit User
+    // Metoda pentru validarea numelui in Edit User
     private boolean isValidNameForEdit(String name) {
         return name.matches("^[A-Z][a-zA-Z ]*$");
     }
 
-    // Metodă pentru validarea emailului în Edit User
+    // Metoda pentru validarea emailului in Edit User
     private boolean isValidEmailForEdit(String email) {
         String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
         return email.matches(emailRegex);

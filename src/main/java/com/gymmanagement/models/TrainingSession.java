@@ -22,7 +22,7 @@ public class TrainingSession {
         this.enrolled = enrolled;
     }
 
-    // Constructor pentru compatibilitate (fără `enrolled`)
+    // Constructor pentru compatibilitate (fara `enrolled`)
     public TrainingSession(int sessionId, int trainerId, String sessionType, LocalDateTime sessionDate, int capacity, int availableSlots) {
         this.sessionId = sessionId;
         this.trainerId = trainerId;
@@ -33,17 +33,17 @@ public class TrainingSession {
         this.enrolled = false; // Valoare implicită
     }
 
-    // Constructor fără `sessionId` (pentru inserare)
+    // Constructor fara `sessionId` (pentru inserare)
     public TrainingSession(int trainerId, String sessionType, LocalDateTime sessionDate, int capacity, int availableSlots) {
         this.trainerId = trainerId;
         this.sessionType = sessionType;
         this.sessionDate = sessionDate;
         this.capacity = capacity;
         this.availableSlots = availableSlots;
-        this.enrolled = false; // Valoare implicită
+        this.enrolled = false; // Valoare implicita
     }
 
-    // Getteri și setteri
+    // Getteri si setteri
     public int getSessionId() {
         return sessionId;
     }

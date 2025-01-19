@@ -61,16 +61,16 @@ public class TrainerDashboardController {
     @FXML
     private void handleLogout() {
         try {
-            // Încarcă interfața de Login
+            // Incarca interfata de Login
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/gymmanagement/LoginView.fxml"));
             Scene scene = new Scene(loader.load());
 
-            // Obține Stage-ul curent și setează scena Login
+            // Obtine Stage-ul curent si seteaza scena Login
             Stage stage = (Stage) root.getScene().getWindow();
             stage.setScene(scene);
             stage.show();
 
-            // Opțional: Curăță sesiunea utilizatorului curent
+            // Optional: Curata sesiunea utilizatorului curent
             SessionManager.setCurrentUser(null);
 
             System.out.println("Deconectare reușită. Redirecționat la pagina de login.");

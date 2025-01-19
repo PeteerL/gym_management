@@ -23,10 +23,10 @@ public class FeedbackDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return false; // Returnează false dacă apare o eroare
+        return false; // Returneaza false daca apare o eroare
     }
 
-    // Obține toate feedback-urile pentru un antrenor specific
+    // Obtine toate feedback-urile pentru un antrenor specific
     public List<Feedback> getFeedbackForTrainer(int trainerId) {
         String query = "SELECT * FROM feedback WHERE trainer_id = ? ORDER BY timestamp DESC";
         List<Feedback> feedbackList = new ArrayList<>();
@@ -51,7 +51,7 @@ public class FeedbackDAO {
         return feedbackList;
     }
 
-    // Șterge un feedback după ID
+    // Sterge un feedback dupa ID
     public boolean deleteFeedback(int feedbackId) {
         String query = "DELETE FROM feedback WHERE feedback_id = ?";
         try (Connection connection = DatabaseConfig.getConnection();
@@ -61,10 +61,10 @@ public class FeedbackDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return false; // Returnează false dacă apare o eroare
+        return false; // Returneaza false daca apare o eroare
     }
 
-    // Obține toate feedback-urile (opțional, pentru administratori)
+    // Obtine toate feedback-urile (optional, pentru administratori)
     public List<Feedback> getAllFeedback() {
         String query = "SELECT * FROM feedback ORDER BY timestamp DESC";
         List<Feedback> feedbackList = new ArrayList<>();
@@ -88,7 +88,7 @@ public class FeedbackDAO {
         return feedbackList;
     }
 
-    // Obține lista cu numele antrenorilor
+    // Obtine lista cu numele antrenorilor
     public List<String> getTrainerNames() {
         List<String> trainerNames = new ArrayList<>();
         String query = "SELECT name FROM users WHERE role = 'trainer'";
@@ -96,11 +96,11 @@ public class FeedbackDAO {
              PreparedStatement stmt = connection.prepareStatement(query);
              ResultSet rs = stmt.executeQuery()) {
             while (rs.next()) {
-                trainerNames.add(rs.getString("name")); // Adaugă numele antrenorului în listă
+                trainerNames.add(rs.getString("name")); // Adauga numele antrenorului in lista
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return trainerNames; // Returnează lista cu numele antrenorilor
+        return trainerNames; // Returneaza lista cu numele antrenorilor
     }
 }

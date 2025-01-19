@@ -21,7 +21,7 @@ public class Subscription {
         this.active = active;
     }
 
-    // Constructor pentru inserare (fără subscriptionId)
+    // Constructor pentru inserare (fara subscriptionId)
     public Subscription(int clientId, String subscriptionType, LocalDate startDate, LocalDate endDate, boolean active) {
         this.clientId = clientId;
         this.subscriptionType = subscriptionType;
@@ -30,7 +30,7 @@ public class Subscription {
         this.active = active;
     }
 
-    // Constructor complet (pentru editare și alte cazuri)
+    // Constructor complet (pentru editare si alte cazuri)
     public Subscription(int subscriptionId, int clientId, String clientName, String subscriptionType, LocalDate startDate, LocalDate endDate, boolean active) {
         this.subscriptionId = subscriptionId;
         this.clientId = clientId;
@@ -41,7 +41,7 @@ public class Subscription {
         this.active = active;
     }
 
-    // Getteri și setteri
+    // Getteri si setteri
     public int getSubscriptionId() {
         return subscriptionId;
     }

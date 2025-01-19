@@ -9,7 +9,7 @@ import java.util.List;
 
 public class UserDAO {
 
-    // Obține un utilizator pe baza emailului
+    // Obtine un utilizator pe baza emailului
     public User getUserByEmail(String email) {
         String query = "SELECT * FROM users WHERE email = ?";
         try (Connection connection = DatabaseConfig.getConnection();
@@ -31,7 +31,7 @@ public class UserDAO {
         return null;
     }
 
-    // Adaugă un utilizator nou
+    // Adauga un utilizator nou
     public boolean addUser(User user) {
         String query = "INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, ?)";
         try (Connection connection = DatabaseConfig.getConnection();
@@ -45,11 +45,11 @@ public class UserDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return false; // Returnează false dacă apare o eroare
+        return false; // Returneaza false daca apare o eroare
     }
 
 
-    // Obține utilizatorii în funcție de rol
+    // Obtine utilizatorii in funcție de rol
     public List<User> getUsersByRole(String role) {
         List<User> users = new ArrayList<>();
         String query = "SELECT * FROM users WHERE role = ?";
@@ -72,7 +72,7 @@ public class UserDAO {
         return users;
     }
 
-    // Șterge un utilizator după ID
+    // Sterge un utilizator dupa ID
     public boolean deleteUserById(int id) {
         String query = "DELETE FROM users WHERE id = ?";
         try (Connection connection = DatabaseConfig.getConnection();
@@ -86,7 +86,7 @@ public class UserDAO {
         return false;
     }
 
-    // Actualizează datele unui utilizator
+    // Actualizeaza datele unui utilizator
     public boolean updateUser(User user) {
         String query = "UPDATE users SET name = ?, email = ?, password = ?, role = ? WHERE id = ?";
         try (Connection connection = DatabaseConfig.getConnection();
@@ -105,7 +105,7 @@ public class UserDAO {
     }
 
 
-    // Obține toți utilizatorii
+    // Obtine toti utilizatorii
     public List<User> getAllUsers() {
         String query = "SELECT * FROM users";
         List<User> users = new ArrayList<>();
@@ -127,18 +127,18 @@ public class UserDAO {
         return users;
     }
 
-    // Șterge un utilizator după ID
+    // Sterge un utilizator după ID
     public boolean deleteUser(int userId) {
         String query = "DELETE FROM users WHERE id = ?";
         try (Connection connection = DatabaseConfig.getConnection();
              PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setInt(1, userId);
             int rowsAffected = stmt.executeUpdate();
-            return rowsAffected > 0; // Returnează true dacă ștergerea a avut loc
+            return rowsAffected > 0; // Returneaza true daca stergerea a avut loc
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return false; // Returnează false dacă a apărut o eroare
+        return false; // Returneaza false daca a aparut o eroare
     }
 
     public int getUserIdByName(String name) {
@@ -153,7 +153,7 @@ public class UserDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return -1; // Returnează -1 dacă utilizatorul nu a fost găsit
+        return -1; // Returneaza -1 daca utilizatorul nu a fost gasit
     }
 
 }

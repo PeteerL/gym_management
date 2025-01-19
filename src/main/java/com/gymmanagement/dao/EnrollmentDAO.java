@@ -75,7 +75,7 @@ public class EnrollmentDAO {
                 }
             }
 
-            // Retragerea clientului și actualizarea locurilor disponibile
+            // Retragerea clientului i actualizarea locurilor disponibile
             connection.setAutoCommit(false);
 
             try (PreparedStatement withdrawStmt = connection.prepareStatement(withdrawQuery);

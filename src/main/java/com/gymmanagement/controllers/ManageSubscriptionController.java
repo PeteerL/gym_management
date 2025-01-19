@@ -53,10 +53,10 @@ public class ManageSubscriptionController {
         endDateColumn.setCellValueFactory(new PropertyValueFactory<>("endDate"));
         activeColumn.setCellValueFactory(new PropertyValueFactory<>("active"));
 
-        // Încărcăm datele în tabel
+        // Incarcam datele în tabel
         loadSubscriptions();
 
-        // Mapăm numele clienților
+        // Mapam numele clientilor
         clientNameToIdMap = userDAO.getAllUsers().stream()
                 .filter(user -> "client".equalsIgnoreCase(user.getRole()))
                 .collect(Collectors.toMap(User::getName, User::getId));
@@ -131,7 +131,7 @@ public class ManageSubscriptionController {
         Dialog<Subscription> dialog = new Dialog<>();
         dialog.setTitle(subscription == null ? "Add Subscription" : "Edit Subscription");
 
-        // Fields
+        // Campurile
         Label clientLabel = new Label("Client:");
         ComboBox<String> clientComboBox = new ComboBox<>(FXCollections.observableArrayList(clientNameToIdMap.keySet()));
         Label typeLabel = new Label("Type:");
@@ -147,7 +147,7 @@ public class ManageSubscriptionController {
         Label activeLabel = new Label("Active:");
         CheckBox activeCheckBox = new CheckBox();
 
-        // Pre-fill fields if editing
+        // Autocompletare campului de editare
         if (subscription != null) {
             clientComboBox.setValue(subscription.getClientName());
             typeComboBox.setValue(subscription.getSubscriptionType());
@@ -174,11 +174,11 @@ public class ManageSubscriptionController {
         dialog.getDialogPane().setContent(grid);
         dialog.getDialogPane().getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
 
-        // Update end date based on type
+        // Updateaza data automat
         typeComboBox.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
                 LocalDate startDate = startDatePicker.getValue() != null ? startDatePicker.getValue() : LocalDate.now();
-                startDatePicker.setValue(startDate); // Completează automat Start Date dacă nu este setat
+                startDatePicker.setValue(startDate); // Completeaza automat Start Date dac nu este setat
                 switch (newValue) {
                     case "1 Month - Standard":
                     case "1 Month - Premium":
@@ -196,7 +196,7 @@ public class ManageSubscriptionController {
             }
         });
 
-        // Setăm automat data curentă la deschiderea dialogului, dacă este pentru adăugare
+        // Setam automat data curenta la deschiderea dialogului, daca este pentru adaugare
         if (subscription == null) {
             startDatePicker.setValue(LocalDate.now());
         }

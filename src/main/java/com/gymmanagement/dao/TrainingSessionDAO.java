@@ -63,7 +63,7 @@ public class TrainingSessionDAO {
         }
     }
 
-    // Metodă pentru a verifica validitatea trainer_id
+    // Metoda pentru a verifica validitatea trainer_id
     private boolean isTrainerIdValid(int trainerId) {
         if (trainerId <= 0) {
             return false;

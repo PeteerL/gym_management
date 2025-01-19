@@ -12,14 +12,9 @@
 
     <Button text="View Subscription" onAction="#handleViewSubscription" />
     <Button text="Schedule Training Session" onAction="#handleScheduleTrainingSession" />
-
-    <!-- Feedback Section -->
     <Button text="Send Feedback to Staff" onAction="#handleSendFeedbackToStaff" />
     <Button text="Review Trainer" onAction="#handleReviewTrainer" />
-
-    <!-- Other functionalities -->
     <Button text="View Activity Statistics" onAction="#handleViewActivityStatistics" />
 
-    <!-- Logout Button -->
     <Button text="Logout" onAction="#handleLogout" style="-fx-text-fill: red;" />
 </VBox>

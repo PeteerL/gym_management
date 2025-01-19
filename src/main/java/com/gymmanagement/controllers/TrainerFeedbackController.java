@@ -36,7 +36,7 @@ public class TrainerFeedbackController {
     }
 
     private void loadTrainers() {
-        // Obține numele antrenorilor din baza de date și populează ChoiceBox-ul
+        // Obtine numele antrenorilor din baza de date si populeaza ChoiceBox-ul
         ObservableList<String> trainerNames = FXCollections.observableArrayList(feedbackDAO.getTrainerNames());
         trainerChoiceBox.setItems(trainerNames);
     }
@@ -74,7 +74,7 @@ public class TrainerFeedbackController {
     private void clearFields() {
         trainerChoiceBox.setValue(null);
         feedbackTextArea.clear();
-        ratingSlider.setValue(3); // Setează valoarea implicită a slider-ului la 3
+        ratingSlider.setValue(3); // Seteaza valoarea implicita a slider-ului la 3
     }
 
     private void closeWindow() {

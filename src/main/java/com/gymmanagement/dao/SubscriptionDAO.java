@@ -88,7 +88,7 @@ public class SubscriptionDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return -1; // Dacă clientul nu este găsit
+        return -1; // Daca clientul nu este gasit
     }
 
     public boolean deleteSubscription(int subscriptionId) {
@@ -125,7 +125,7 @@ public class SubscriptionDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return null; // Dacă nu există abonament
+        return null; // Daca nu exista abonament
     }
 
 }

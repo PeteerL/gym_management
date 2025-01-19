@@ -9,7 +9,6 @@ module com.gymmanagement {
     opens com.gymmanagement.controllers to javafx.fxml;
     opens com.gymmanagement.models to javafx.base;
 
-    // Exportează pachetele utilizabile în alte module (dacă este cazul)
     exports com.gymmanagement.app;
     exports com.gymmanagement.controllers;
 }

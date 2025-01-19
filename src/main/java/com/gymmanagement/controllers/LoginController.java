@@ -50,7 +50,7 @@ public class LoginController {
             System.out.println("Autentificare reușită pentru: " + user.getName());
             errorLabel.setText("");
 
-            // Seteaza utilizatorul curent în sesiune
+            // Seteaza utilizatorul curent in sesiune
             SessionManager.setCurrentUser(user);
 
             // Redirectionare pe baza rolului

@@ -10,7 +10,7 @@ public class Feedback {
     private int rating;
     private Timestamp timestamp;
 
-    // Constructor pentru inserare (fără feedbackId și timestamp)
+    // Constructor pentru inserare (fara feedbackId si timestamp)
     public Feedback(int clientId, int trainerId, String feedbackText, int rating) {
         this.clientId = clientId;
         this.trainerId = trainerId;
@@ -28,7 +28,7 @@ public class Feedback {
         this.timestamp = timestamp;
     }
 
-    // Getteri și setteri
+    // Getteri si setteri
     public int getFeedbackId() {
         return feedbackId;
     }
